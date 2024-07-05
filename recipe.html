@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Empress - Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .recipe {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .recipe:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .recipe h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .recipe ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .recipe ul li {
+            margin-bottom: 8px;
+        }
+
+        .recipe ul li img {
+            width: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .recipe p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .recipe button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .recipe button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Recipe Kits</h2>
+
+<div class="grid">
+    <div class="recipe">
+        <h3>Salad</h3>
+        <ul>
+            <li><img src="https://previews.123rf.com/images/renamarie/renamarie1104/renamarie110400027/9341181-chopped-romaine-lettuce-on-cutting-board.jpg" alt="Lettuce"> Lettuce - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMOTi__vV87bPEXcmGuqO4u3MrMaIBRiPlMw&s " alt="Tomatoes"> Tomatoes - Diced</li>
+            <li><img src="https://i.pinimg.com/736x/26/80/ba/2680ba57ee0f830f48165ee047b6cfa3.jpg" alt="Cucumbers"> Cucumbers - Sliced</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Dk7iMNNTK5IJI13QYypubCoF6BK9mNIhtw&s" alt="Carrots"> Carrots - Shredded</li>
+        </ul>
+        <p>Kit Price: $10</p>
+        <button onclick="checkAvailability('Salad')">Check Availability</button>
+        <p id="availability-salad" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Stir Fry</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNHRG3tXwMQg-BwcGGkCgrTN1IHIM5X2VGWA&s" alt="Broccoli"> Broccoli - Florets</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IAd4aQHI7xxbYYxLZMjcQGkMhqPjHO-zGw&s" alt="Bell Peppers"> Bell Peppers - Strips</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2aoaH3bg1xy4a4OA3fWxh8FO3FxIW7uNmTA&s"Carrots"> Carrots - Julienne</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRknxwx0VgMC-zzoOE-tXAJ3hPGfjtATFWPQ&s"> Onions - Sliced</li>
+        </ul>
+        <p>Kit Price: $12</p>
+        <button onclick="checkAvailability('Stir Fry')">Check Availability</button>
+        <p id="availability-stirfry" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Soup</h3>
+        <ul>
+            <li><img src="https://thumbs.dreamstime.com/z/diced-potatoes-plate-isolated-white-background-242567883.jpg" alt="Potatoes"> Potatoes - Cubed</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlR-ZyUUZ5FebPRH3qw6ZtlaTAy4Kq_wf0Dg&s" alt="Carrots"> Carrots - Sliced</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSirZudzv6jIKnX-ozDyYDVtieQMb_fJl2ZdQ&s" alt="Celery"> Celery - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi_aHWqy8yv3sQqgp-OwJDi2HqAF0HMynxOw&s" alt="Onions"> Onions - Diced</li>
+        </ul>
+        <p>Kit Price: $11</p>
+        <button onclick="checkAvailability('Soup')">Check Availability</button>
+        <p id="availability-soup" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Sambar</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReCl0iAhC0Skv0FwMNk88A-7ahJ5m5pGD9zK9o64F7zHi1YGIUQphatldJLw&s" alt="Toor Dal"> Toor Dal - Cooked</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi8CawQvE1zJeA85yH7Yf5AGVnUi-3Sv_Rcw&s" alt="Tomatoes"> Tomatoes - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDoNhkltk5USiaKtmzbrew2oNeWJDzzOLN0w&s" alt="Drumstick"> Drumstick - Cut</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqdMmFz3GC4yAypkpHELnmO0J1ApWCRuHTQ&s" alt="Tamarind"> Tamarind - Extract</li>
+        </ul>
+        <p>Kit Price: $13</p>
+        <button onclick="checkAvailability('Sambar')">Check Availability</button>
+        <p id="availability-sambar" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Aviyal</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEPsjMcI2Wr3-TGxEQY43upEpigdNAeJIbEw&s" alt="Yam"> Yam - Cubes</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXocHLzPNr6sDULu5V-RTUf1f1UCYGwoyqXw&s" alt="Carrots"> Carrots - Sliced</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyk8CXdwJfw9rbBggKvSANmosHsbZ8rcsv4g&s" alt="Coconut"> Coconut - Grated</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdogCLFPMPdV0SUhgyUhY7uIolmN5mxf0_EQ&s" alt="Curry Leaves"> Curry Leaves - Fresh</li>
+        </ul>
+        <p>Kit Price: $14</p>
+        <button onclick="checkAvailability('Aviyal')">Check Availability</button>
+        <p id="availability-aviyal" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Fried Rice</h3>
+        <ul>
+            <li><img src="https://hips.hearstapps.com/vidthumb/images/delish-u-rice-2-1529079587.jpg?crop=1xw:1xh;center,top&resize=1200:*" alt="Rice"> Rice - Cooked</li>
+            <li><img src="https://media.istockphoto.com/id/1392567687/photo/scrambled-eggs-on-plate.jpg?s=612x612&w=0&k=20&c=CBH4SXyQ6Lk8e40CDEYD4GHO6NV3cxE4t2kSepFI5t4=" alt="Egg"> Egg - Scrambled</li>
+            <li><img src="https://www.shutterstock.com/image-photo/fresh-diced-carrot-isolated-raw-600nw-2350550177.jpg" alt="Carrots"> Carrots - Diced</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7KppHyKTdlcIfLwNB1oC9OPCZ4IxqIc2akhqqT-9U8UHSm8p3_6usCxslfQ&s" alt="Peas"> Peas - Cooked</li>
+        </ul>
+        <p>Kit Price: $15</p>
+        <button onclick="checkAvailability('Fried Rice')">Check Availability</button>
+        <p id="availability-friedrice" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Classic Sambar</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReCl0iAhC0Skv0FwMNk88A-7ahJ5m5pGD9zK9o64F7zHi1YGIUQphatldJLw&s" alt="Toor Dal"> Toor Dal - Cooked</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqdMmFz3GC4yAypkpHELnmO0J1ApWCRuHTQ&s" alt="Tamarind"> Tamarind - Extract</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt78my5VJ_ZqeT4h-lQvTHp5Gp03Ia2FPa_A&s"> Drumstick - Chopped</li>
+            <li><img src="https://media.istockphoto.com/id/1355474706/photo/long-plum-tomato-group-isolated-fresh-small-cherry-tomatoes.jpg?s=612x612&w=0&k=20&c=MzodLt02mmuL7UD11zr-0JcwmikXMLU12pR7QesLANA=" alt="Tomato"> Tomato - Chopped</li>
+        </ul>
+        <p>Kit Price: $12</p>
+        <button onclick="checkAvailability('Classic Sambar')">Check Availability</button>
+        <p id="availability-classic" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Vegetable Sambar</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpfORYq4a7kt2FAQWmJ3wuQxdNCeN2cBKyow&s"> Mixed Vegetables - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReCl0iAhC0Skv0FwMNk88A-7ahJ5m5pGD9zK9o64F7zHi1YGIUQphatldJLw&s" alt="Toor Dal"> Toor Dal - Cooked</li>
+        </ul>
+        <p>Kit Price: $14</p>
+        <button onclick="checkAvailability('Vegetable Sambar')">Check Availability</button>
+        <p id="availability-vegetable" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Onion Sambar</h3>
+        <ul>
+            <li><img src="https://www.rachelcooks.com/wp-content/uploads/2021/09/pickled-red-onions-1500-2.jpg" alt="Onion"> Onion - Sliced</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTIuYofYMfxb9AxXCOR_NYFoZ1rEQBUReccw&s" alt="Tomato"> Tomato - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqdMmFz3GC4yAypkpHELnmO0J1ApWCRuHTQ&s" alt="Tamarind"> Tamarind - Extract</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIjk-FlolDQ1cxy60RNLzvokN9wuJLX9k8aA&s" alt="Toor Dal"> Toor Dal - Cooked</li>
+        </ul>
+        <p>Kit Price: $10</p>
+        <button onclick="checkAvailability('Onion Sambar')">Check Availability</button>
+        <p id="availability-onion" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Spinach Sambar</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ5FGabNa8MTg9fHfvBdfXt2_Bi7K5x40aVw&s" alt="Spinach"> Spinach - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTIuYofYMfxb9AxXCOR_NYFoZ1rEQBUReccw&s" alt="Tomato"> Tomato - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqdMmFz3GC4yAypkpHELnmO0J1ApWCRuHTQ&s" alt="Tamarind"> Tamarind - Extract</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReCl0iAhC0Skv0FwMNk88A-7ahJ5m5pGD9zK9o64F7zHi1YGIUQphatldJLw&s" alt="Toor Dal"> Toor Dal - Cooked</li>
+        </ul>
+        <p>Kit Price: $11</p>
+        <button onclick="checkAvailability('Spinach Sambar')">Check Availability</button>
+        <p id="availability-spinach" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Pumpkin Sambar</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4kYTqSg9RLaRVEjQ0aVuEm8047nVp5PLvLQ&s" alt="Pumpkin"> Pumpkin - Cubed</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTIuYofYMfxb9AxXCOR_NYFoZ1rEQBUReccw&s" alt="Tomato"> Tomato - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqdMmFz3GC4yAypkpHELnmO0J1ApWCRuHTQ&s" alt="Tamarind"> Tamarind - Extract</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReCl0iAhC0Skv0FwMNk88A-7ahJ5m5pGD9zK9o64F7zHi1YGIUQphatldJLw&s" alt="Toor Dal"> Toor Dal - Cooked</li>
+        </ul>
+        <p>Kit Price: $13</p>
+        <button onclick="checkAvailability('Pumpkin Sambar')">Check Availability</button>
+        <p id="availability-pumpkin" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Mixed Lentils Sambar</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmL_87cDrOeJ4nLSOvXYNmc5NQDliIEkukSg&s" alt="Mixed Lentils"> Mixed Lentils - Cooked</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTIuYofYMfxb9AxXCOR_NYFoZ1rEQBUReccw&s" alt="Tomato"> Tomato - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqdMmFz3GC4yAypkpHELnmO0J1ApWCRuHTQ&s" alt="Tamarind"> Tamarind - Extract</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpfORYq4a7kt2FAQWmJ3wuQxdNCeN2cBKyow&s" alt="Vegetables"> Mixed Vegetables - Chopped</li>
+        </ul>
+        <p>Kit Price: $15</p>
+        <button onclick="checkAvailability('Mixed Lentils Sambar')">Check Availability</button>
+        <p id="availability-mixedlentils" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Drumstick Sambar</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDoNhkltk5USiaKtmzbrew2oNeWJDzzOLN0w&s" alt="Drumstick"> Drumstick - Cut</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTIuYofYMfxb9AxXCOR_NYFoZ1rEQBUReccw&s" alt="Tomato"> Tomato - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqdMmFz3GC4yAypkpHELnmO0J1ApWCRuHTQ&s" alt="Tamarind"> Tamarind - Extract</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReCl0iAhC0Skv0FwMNk88A-7ahJ5m5pGD9zK9o64F7zHi1YGIUQphatldJLw&s" alt="Toor Dal"> Toor Dal - Cooked</li>
+        </ul>
+        <p>Kit Price: $12</p>
+        <button onclick="checkAvailability('Drumstick Sambar')">Check Availability</button>
+        <p id="availability-drumstick" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Tomato Sambar</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTIuYofYMfxb9AxXCOR_NYFoZ1rEQBUReccw&s" alt="Tomato"> Tomato - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqdMmFz3GC4yAypkpHELnmO0J1ApWCRuHTQ&s" alt="Tamarind"> Tamarind - Extract</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReCl0iAhC0Skv0FwMNk88A-7ahJ5m5pGD9zK9o64F7zHi1YGIUQphatldJLw&s"alt="Toor Dal"> Toor Dal - Cooked</li>
+            <li><img src="https://c8.alamy.com/comp/EX1FPB/hot-green-peppers-slices-EX1FPB.jpg" alt="Green Chili"> Green Chili - Sliced</li>
+        </ul>
+        <p>Kit Price: $11</p>
+        <button onclick="checkAvailability('Tomato Sambar')">Check Availability</button>
+        <p id="availability-tomato" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Ladyfinger (Okra) Sambar</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU6kRPIGdcNVCr4Qwa8X28I-AH7Lz1FPQsug&s" alt="Ladyfinger"> Ladyfinger - Sliced</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTIuYofYMfxb9AxXCOR_NYFoZ1rEQBUReccw&s"  alt="Tomato"> Tomato - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqdMmFz3GC4yAypkpHELnmO0J1ApWCRuHTQ&s" alt="Tamarind"> Tamarind - Extract</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReCl0iAhC0Skv0FwMNk88A-7ahJ5m5pGD9zK9o64F7zHi1YGIUQphatldJLw&s" alt="Toor Dal"> Toor Dal - Cooked</li>
+        </ul>
+        <p>Kit Price: $13</p>
+        <button onclick="checkAvailability('Ladyfinger Sambar')">Check Availability</button>
+        <p id="availability-ladyfinger" class="hidden"></p>
+    </div>
+
+    <div class="recipe">
+        <h3>Vegetable Biryani</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoi_Lb57SCLHJgaAJLynR2-yjrrvvSvTI6-A&s" alt="Rice"> Rice - Basmati</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT484lPGVUF4fVhRSYiOONV77t5OQhwNA45gQ&s" alt="Potatoes"> Potatoes - Cubed</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ418mCfh5RPuAZIvK7bR9p_1h0BflD3Prww&s" alt="Carrots"> Carrots - Sliced</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqu8IfMv95rWC3udGFAzl_i_aSNE458lPSiA&s" alt="Cauliflower"> Cauliflower - Florets</li>
+        </ul>
+        <p>Kit Price: $16</p>
+        <button onclick="checkAvailability('Vegetable Biryani')">Check Availability</button>
+        <p id="availability-vegetable-biryani" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Veggie Burger</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO3CH2aT4fKf15Ml1octz6vP_4lc8PnBC__Q&s" alt="Black Beans"> Black Beans - Mashed</li>
+            <li><img src="https://cdn11.bigcommerce.com/s-dis4vxtxtc/images/stencil/1280x1280/products/3305/3109/how-to-cook-quinoa.sq_2__40395.1679026738.jpg?c=2" alt="Quinoa"> Quinoa - Cooked</li>
+            <li><img src="https://recipes.net/wp-content/uploads/2023/11/how-to-cook-frozen-chopped-spinach-1701010813.jpg" alt="Spinach"> Spinach - Chopped</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF2vRVAN8VFhYEq6tROHVIAd_73BtzX7OKgQ&s" alt="Avocado"> Avocado - Sliced</li>
+        </ul>
+        <p>Kit Price: $14</p>
+        <button onclick="checkAvailability('Veggie Burger')">Check Availability</button>
+        <p id="availability-veggie-burger" class="hidden"></p>
+    </div>
+    
+    <div class="recipe">
+        <h3>Tofu Stir Fry</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPCR01U9x0xDOn-ajS0Z7uquTD9XVlYU94ZA&s" alt="Tofu"> Tofu - Cubed</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHfEDiHpfEdU7CzaCr_UPmGuyQR2Wa6csng&s" alt="Broccoli"> Broccoli - Florets</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IAd4aQHI7xxbYYxLZMjcQGkMhqPjHO-zGw&s" alt="Bell Peppers"> Bell Peppers - Strips</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2aoaH3bg1xy4a4OA3fWxh8FO3FxIW7uNmTA&s" alt="Carrots"> Carrots - Julienne</li>
+        </ul>
+        <p>Kit Price: $16</p>
+        <button onclick="checkAvailability('Tofu Stir Fry')">Check Availability</button>
+        <p id="availability-tofu-stirfry" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Caprese Salad</h3>
+        <ul>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3-hsLCdfPkO4h78dzTusETJIOgMNZr1aXQ&s" alt="Tomatoes"> Tomatoes - Sliced</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GAEDNb7ukMtktOfZLEf9gO9xrKAH1GhkfQ&s" alt="Mozzarella"> Fresh Mozzarella - Sliced</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYCFfbkaz70H707rMkZ49EGsgtXy0CwcABZQ&s" alt="Basil"> Fresh Basil Leaves</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyR4r0P4d5hRf6yWW6QCV2Tz73Qm2YnGTLSQ&s" alt="Olive Oil"> Olive Oil</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9PfMyRGpJMBq_k-WCNrgrCGUvjQgqIJZBBOaxu_RC8_fbgeXcBszBmX7V_JAD5JAd-vg&usqp=CAU" alt="Balsamic Vinegar"> Balsamic Vinegar</li>
+        </ul>
+        <p>Kit Price: $12</p>
+        <button onclick="checkAvailability('Caprese Salad')">Check Availability</button>
+        <p id="availability-caprese-salad" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Vegetable Poriyal</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/carrot.jpg" alt="Carrot"> Carrot - Chopped</li>
+            <li><img src="https://example.com/ingredients/beans.jpg" alt="Beans"> Beans - Chopped</li>
+            <li><img src="https://example.com/ingredients/coconut.jpg" alt="Coconut"> Grated Coconut</li>
+            <li><img src="https://example.com/ingredients/greenchili.jpg" alt="Green Chilies"> Green Chilies - Slit</li>
+            <li><img src="https://example.com/ingredients/curryleaves.jpg" alt="Curry Leaves"> Curry Leaves</li>
+        </ul>
+        <p>Kit Price: $8</p>
+        <button onclick="checkAvailability('Vegetable Poriyal')">Check Availability</button>
+        <p id="availability-vegetable-poriyal" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Avial</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/carrot.jpg" alt="Carrot"> Carrot - Sliced</li>
+            <li><img src="https://example.com/ingredients/potato.jpg" alt="Potato"> Potato - Cubed</li>
+            <li><img src="https://example.com/ingredients/beans.jpg" alt="Beans"> Beans - Cut into Pieces</li>
+            <li><img src="https://example.com/ingredients/pumpkin.jpg" alt="Pumpkin"> Pumpkin - Cubed</li>
+            <li><img src="https://example.com/ingredients/yam.jpg" alt="Yam"> Yam - Cubed</li>
+            <li><img src="https://example.com/ingredients/coconut.jpg" alt="Coconut"> Grated Coconut</li>
+            <li><img src="https://example.com/ingredients/curryleaves.jpg" alt="Curry Leaves"> Curry Leaves</li>
+        </ul>
+        <p>Kit Price: $12</p>
+        <button onclick="checkAvailability('Avial')">Check Availability</button>
+        <p id="availability-avial" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Thoran</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/cabbage.jpg" alt="Cabbage"> Cabbage - Shredded</li>
+            <li><img src="https://example.com/ingredients/carrot.jpg" alt="Carrot"> Carrot - Grated</li>
+            <li><img src="https://example.com/ingredients/beans.jpg" alt="Beans"> Beans - Chopped</li>
+            <li><img src="https://example.com/ingredients/coconut.jpg" alt="Coconut"> Grated Coconut</li>
+            <li><img src="https://example.com/ingredients/greenchili.jpg" alt="Green Chilies"> Green Chilies - Slit</li>
+            <li><img src="https://example.com/ingredients/curryleaves.jpg" alt="Curry Leaves"> Curry Leaves</li>
+        </ul>
+        <p>Kit Price: $9</p>
+        <button onclick="checkAvailability('Thoran')">Check Availability</button>
+        <p id="availability-thoran" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Potato Curry</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/potato.jpg" alt="Potato"> Potato - Cubed</li>
+            <li><img src="https://example.com/ingredients/onion.jpg" alt="Onion"> Onion - Chopped</li>
+            <li><img src="https://example.com/ingredients/tomato.jpg" alt="Tomato"> Tomato - Chopped</li>
+            <li><img src="https://example.com/ingredients/spices.jpg" alt="Spices"> Spices (Turmeric, Cumin)</li>
+        </ul>
+        <p>Kit Price: $6</p>
+        <button onclick="checkAvailability('Potato Curry')">Check Availability</button>
+        <p id="availability-potato-curry" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Okra Pulusu</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/okra.jpg" alt="Okra"> Okra - Sliced</li>
+            <li><img src="https://example.com/ingredients/tamarind.jpg" alt="Tamarind"> Tamarind Extract</li>
+            <li><img src="https://example.com/ingredients/spices.jpg" alt="Spices"> Spices (Coriander, Red Chili)</li>
+            <li><img src="https://example.com/ingredients/curryleaves.jpg" alt="Curry Leaves"> Curry Leaves</li>
+        </ul>
+        <p>Kit Price: $7</p>
+        <button onclick="checkAvailability('Okra Pulusu')">Check Availability</button>
+        <p id="availability-okra-pulusu" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Cabbage Kootu</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/cabbage.jpg" alt="Cabbage"> Cabbage - Shredded</li>
+            <li><img src="https://example.com/ingredients/lentils.jpg" alt="Lentils"> Lentils (Toor Dal)</li>
+            <li><img src="https://example.com/ingredients/coconut.jpg" alt="Coconut"> Grated Coconut</li>
+            <li><img src="https://example.com/ingredients/greenchili.jpg" alt="Green Chilies"> Green Chilies - Slit</li>
+        </ul>
+        <p>Kit Price: $7</p>
+        <button onclick="checkAvailability('Cabbage Kootu')">Check Availability</button>
+        <p id="availability-cabbage-kootu" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Carrot Poriyal</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/carrot.jpg" alt="Carrot"> Carrot - Grated</li>
+            <li><img src="https://example.com/ingredients/coconut.jpg" alt="Coconut"> Grated Coconut</li>
+            <li><img src="https://example.com/ingredients/greenchili.jpg" alt="Green Chilies"> Green Chilies - Slit</li>
+            <li><img src="https://example.com/ingredients/curryleaves.jpg" alt="Curry Leaves"> Curry Leaves</li>
+        </ul>
+        <p>Kit Price: $5</p>
+        <button onclick="checkAvailability('Carrot Poriyal')">Check Availability</button>
+        <p id="availability-carrot-poriyal" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Tomato Rasam</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/tomato.jpg" alt="Tomato"> Tomato - Chopped</li>
+            <li><img src="https://example.com/ingredients/tamarind.jpg" alt="Tamarind"> Tamarind Extract</li>
+            <li><img src="https://example.com/ingredients/spices.jpg" alt="Spices"> Spices (Cumin, Pepper)</li>
+            <li><img src="https://example.com/ingredients/coriander.jpg" alt="Coriander"> Fresh Coriander</li>
+        </ul>
+        <p>Kit Price: $5</p>
+        <button onclick="checkAvailability('Tomato Rasam')">Check Availability</button>
+        <p id="availability-tomato-rasam" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Green Bean Poriyal</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/greenbeans.jpg" alt="Green Beans"> Green Beans - Chopped</li>
+            <li><img src="https://example.com/ingredients/coconut.jpg" alt="Coconut"> Grated Coconut</li>
+            <li><img src="https://example.com/ingredients/greenchili.jpg" alt="Green Chilies"> Green Chilies - Slit</li>
+            <li><img src="https://example.com/ingredients/curryleaves.jpg" alt="Curry Leaves"> Curry Leaves</li>
+        </ul>
+        <p>Kit Price: $6</p>
+        <button onclick="checkAvailability('Green Bean Poriyal')">Check Availability</button>
+        <p id="availability-green-bean-poriyal" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Brinjal Gothsu</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/brinjal.jpg" alt="Brinjal"> Brinjal (Eggplant) - Cubed</li>
+            <li><img src="https://example.com/ingredients/tamarind.jpg" alt="Tamarind"> Tamarind Extract</li>
+            <li><img src="https://example.com/ingredients/spices.jpg" alt="Spices"> Spices (Turmeric, Coriander)</li>
+            <li><img src="https://example.com/ingredients/coconut.jpg" alt="Coconut"> Grated Coconut</li>
+        </ul>
+        <p>Kit Price: $7</p>
+        <button onclick="checkAvailability('Brinjal Gothsu')">Check Availability</button>
+        <p id="availability-brinjal-gothsu" class="hidden"></p>
+    </div>
+    <div class="recipe">
+        <h3>Turnip Poriyal</h3>
+        <ul>
+            <li><img src="https://example.com/ingredients/turnip.jpg" alt="Turnip"> Turnip - Cubed</li>
+            <li><img src="https://example.com/ingredients/coconut.jpg" alt="Coconut"> Grated Coconut</li>
+            <li><img src="https://example.com/ingredients/greenchili.jpg" alt="Green Chilies"> Green Chilies - Slit</li>
+            <li><img src="https://example.com/ingredients/curryleaves.jpg" alt="Curry Leaves"> Curry Leaves</li>
+        </ul>
+        <p>Kit Price: $6</p>
+        <button onclick="checkAvailability('Turnip Poriyal')">Check Availability</button>
+        <p id="availability-turnip-poriyal" class="hidden"></p>
+    </div>
+                                
+    
+    
+
+    
+    
+</div>
+
+</body>
+</html>

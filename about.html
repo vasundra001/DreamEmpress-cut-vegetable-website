@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Empress - About</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional CSS for layout and styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 2; /* Ensure header is above background image */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: bold; /* Added font-weight for emphasis */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f2ce62; /* Adjusted color to match theme */
+            position: relative; /* Ensure z-index works */
+            animation: textGlow 2s ease-in-out infinite alternate; /* Text glow animation */
+        }
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 10px #f2ce62, 0 0 20px #f2ce62, 0 0 30px #f2ce62; /* Glow effect */
+            }
+            100% {
+                text-shadow: 0 0 20px #f2ce62, 0 0 30px #f2ce62, 0 0 40px #f2ce62; /* Increase glow intensity */
+            }
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #f0f0f0; /* Lighten color on hover */
+        }
+        main {
+            padding: 40px 20px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.9); /* Light semi-transparent white background */
+            border-radius: 10px; /* Rounded corners for main content */
+            max-width: 800px;
+            margin: 40px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Drop shadow for container */
+        }
+        main h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        main p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            text-align: left;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+        .farm-section {
+            background-color: rgba(255, 255, 255, 0.95); /* Very light semi-transparent white background */
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: left;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .farm-section h3 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .farm-section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .farm-image {
+            background-image: url('https://www.transformationholdings.com/wp-content/uploads/2020/06/vegetable-rows-pepper-grow-field-farming-agriculture.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 400px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .fssai-section {
+            background-color: #f2f2f2;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: left;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .fssai-section h3 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .fssai-section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .fssai-symbol {
+            display: inline-block;
+            width: 150px;
+            height: 70px;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjBmaovrlGJmiaVGHyjXYuQJjpB6IpAX1srg&s'); /* Replace with actual path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .image-slides {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            overflow-x: auto; /* Allow horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap images to the scroll container */
+        }
+        .image-slides img {
+            width: 300px; /* Adjust as needed */
+            height: 200px; /* Adjust as needed */
+            border-radius: 8px;
+            margin-right: 10px;
+            scroll-snap-align: center; /* Ensure images snap to center */
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DREAM EMPRESS</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>About Us</h2>
+        <p>Welcome to Dream Empress, where culinary creativity meets convenience with every cut vegetable recipe kit. We are dedicated to revolutionizing home cooking by providing you with chef-inspired recipes and meticulously prepped vegetables that make meal preparation effortless and enjoyable.</p>
+        
+        <div class="farm-image"></div>
+
+        <div class="farm-section">
+            <h3>𝙊𝙪𝙧 𝙎𝙪𝙨𝙩𝙖𝙞𝙣𝙖𝙗𝙡𝙚 𝙁𝙖𝙧𝙢𝙞𝙣𝙜 𝙋𝙧𝙖𝙘𝙩𝙞𝙘𝙚𝙨</h3>
+            <p>At Dream Empress, we believe in the importance of quality and sustainability in farming. Here are some details about how we grow our crops:</p>
+            <ul>
+                <li>We prioritize organic farming methods</a> to ensure the highest quality and nutritional value of our vegetables.</li>
+                <li>We use natural fertilizers and avoid synthetic chemicals to minimize environmental impact.</li>
+                <li>Our crops are carefully monitored and tended to by experienced farmers to maintain optimal growth conditions.</li>
+                <li>We practice crop rotation and soil enrichment techniques to enhance soil fertility and reduce pest problems naturally.</li>
+                <li>Water conservation is a top priority, and we employ efficient irrigation systems to minimize water usage.</li>
+                <li>We are committed to reducing food waste by harvesting only what is needed and using efficient distribution methods.</li>
+            </ul>
+            <div class="image-slides">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0fC5sdmURVybpd_GB3nrBvKOHqZT3QqCoMg&s" alt="Farming Image 1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Vmm096D1QwZ-nZ831e1ZrR7A1kA7wE93NA&s" alt="Farming Image 2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDlP90F9Hy1rAiyD5Ej8bVKU0XKD2Dbdh-g&s" alt="Farming Image 3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyqjsHio7qAEY0Q9iaYggbMlLCLIqfErb6Lw&s" alt="Farming Image 1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7TF1ex3gnZUQsp-AAAxdjLPwRgW68-ZNnw&s" alt="Farming Image 1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIQ9xB-HbnPnFTWPLInxrA6z8r7f93iAWPOQ&s" alt="Farming Image 1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkz8nLfQrwvzX_-JXoyQAF88cTENuS6k_WJQ&s" alt="Farming Image 1">
+                
+                
+            </div>
+        </div>
+
+        <div class="fssai-section">
+            <h3>FSSAI Compliance</h3>
+            <div class="fssai-symbol"></div>
+            <p>Our products are compliant with the standards set by the Food Safety and Standards Authority of India (FSSAI), ensuring that they meet regulatory requirements for safety, quality, and hygiene.</p>
+        </div>
+
+        <p><a href="privacy.html">Privacy Policy</a></p> 
+
+    </main>
+  
+  
+</body>
+</html>
